@@ -11,7 +11,7 @@ export default function Avatar({ person, size }) {
         width={size}
         height={size}
       />
-      <p>{person.bio}</p>
+      <p className="mt-4 text-center">{person.bio}</p>
     </div>
   );
 }
