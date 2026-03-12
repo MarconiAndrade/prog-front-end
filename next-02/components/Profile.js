@@ -3,7 +3,6 @@ import Avatar from "./Avatar";
 export default function Profile() {
   return (
     <div>
-      <h3>{person.name}</h3>
       <Avatar
         size={100}
         person={{ 
