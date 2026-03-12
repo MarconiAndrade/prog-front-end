@@ -1,3 +1,3 @@
 export function getImageUrl(person, size = "s") {
-  return '/' + person.imageId + size + ".jpeg";
+  return '/' + person.imageId + size + ".jpeg"; 
 }
