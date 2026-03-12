@@ -2,8 +2,8 @@ import { getImageUrl } from "@/utils";
 
 export default function Avatar({ person, size }) {
   return (
-    <div>
-      <h3>{person.name}</h3>
+    <div className="flex flex-col items-center">
+      <h2>{person.name}</h2>
       <img
         className="avatar"
         src={getImageUrl(person)}
