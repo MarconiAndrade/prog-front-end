@@ -5,7 +5,6 @@ export default function Home(){
     return(
         <div>
             <JogoDados />
-            Exemplo de expressão: {5**3}
         </div>
     )
 }

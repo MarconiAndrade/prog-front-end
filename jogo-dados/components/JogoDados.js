@@ -3,7 +3,7 @@ import {useState} from 'react';
 import Dado from './Dado';
 
 export default function JogoDados(){
-    const numeroDado = Math.floor(Math.random()*6) + 1;
+    const numeroDado = () => Math.floor(Math.random()*6) + 1;
 
     const [rodada, setRodada] = useState(1);
     const [dadosJogador1, setDadosJogador1] = useState([null, null]);
@@ -30,11 +30,11 @@ export default function JogoDados(){
 
         if(somaJogador1 > somaJogador2){
             setVitoriasJogador1(prev => prev + 1);
-            setResultadoRodada(`Jogador 1 venceu a ${rodada}!`);
+            setResultadoRodada(`Jogador 1 venceu a rodada ${rodada}!`);
         }
         else if(somaJogador2 > somaJogador1){
             setVitoriasJogador2(prev => prev + 1);
-            setResultadoRodada(`Jogador 2 venceu a ${rodada}!`);
+            setResultadoRodada(`Jogador 2 venceu a rodada ${rodada}!`);
         } 
         else{
             setResultadoRodada(`Empate na rodada ${rodada}!`);
@@ -84,5 +84,4 @@ export default function JogoDados(){
 
         </div>
     )
-
 }
