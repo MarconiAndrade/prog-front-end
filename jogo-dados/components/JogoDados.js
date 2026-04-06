@@ -54,5 +54,14 @@ export default function JogoDados(){
         }
     };
 
-    
+    const reiniciar = () => {
+        setRodada(1);
+        setVitoriasJogador1(0);
+        setVitoriasJogador2(0);
+        setGameOver(false);
+        setTurnoJogador1(true);
+        setDadosJogador1([null, null]);
+        setDadosJogador2([null, null]);
+        setResultadoRodada("");
+    };
 }
