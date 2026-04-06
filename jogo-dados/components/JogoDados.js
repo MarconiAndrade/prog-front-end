@@ -47,7 +47,7 @@ export default function JogoDados(){
                 setDadosJogador1([null, null]);
                 setDadosJogador2([null, null]);
                 setResultadoRodada("Nova rodada! Vez do jogador 1");
-            }, 3500);
+            }, 2500);
         }
         else{
             setGameOver(true);
@@ -78,9 +78,9 @@ export default function JogoDados(){
     };
 
     return(
-        <div className = "divPrincipal">
-            <h1>Jogo de Dados</h1>
-            <h2>Rodada {rodada}/5</h2>
+        <div className = "divPrincipal mt-10 p-5 max-w-lg mx-auto bg-white rounded-2xl shadow-xl text-center text-black">
+            <h1 className="text-2xl font-extrabold mb-1">Jogo de Dados</h1>
+            <h2 className="text-lg text-blue-500 mb-4 font-semibold">Rodada {rodada}/5</h2>
 
             <div className="grid grid-cols-2 gap-8 mb-8">
                 <div className={`p-4 rounded-lg ${turnoJogador1 ? 'bg-blue-50 border-2 border-blue-400' : 'bg-gray-50'}`}>
