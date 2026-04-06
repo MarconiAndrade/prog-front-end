@@ -1,13 +1,13 @@
-import { getImageUrl } from "@/utils";
+import Image from 'next/image';
 
 export default function Dado({valor}){
-    return (
+    return(
         <div className="dado">
-            <img
+            <Image
                 className="face"
-                src={getImageUrl(valor)}
-                alt={valor.face}
-                width={100}
+                src={`/faces/face${valor}.jpeg`}
+                alt={`Dado com valor ${valor}`}
+                width={120}
                 height={100}
             />
         </div>
