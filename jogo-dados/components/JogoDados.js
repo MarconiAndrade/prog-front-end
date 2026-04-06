@@ -64,4 +64,16 @@ export default function JogoDados(){
         setDadosJogador2([null, null]);
         setResultadoRodada("");
     };
+
+    const getVencedorFinal = () => {
+        if(vitoriasJogador1 > vitoriasJogador2){
+            return "Jogador 1 venceu o jogo!";
+        }
+        else if(vitoriasJogador2 > vitoriasJogador1){
+            return "Jogador 2 venceu o jogo!";
+        }
+        else{
+            return "O jogo terminou empatado!";
+        }
+    };
 }
