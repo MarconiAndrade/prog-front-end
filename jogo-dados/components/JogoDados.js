@@ -6,7 +6,7 @@ export default function JogoDados(){
     const numeroDado = Math.floor(Math.random()*6) + 1;
 
     const [rodada, setRodada] = useState(1);
-    const [dadosJodador1, setDadosJodador1] = useState([null, null]);
+    const [dadosJogador1, setDadosJogador1] = useState([null, null]);
     const [dadosJogador2, setDadosJogador2] = useState([null, null]);
     const [turnoJogador1, setTurnoJogador1] = useState(true);
     const [vitoriasJogador1, setVitoriasJogador1] = useState(0);
@@ -76,4 +76,13 @@ export default function JogoDados(){
             return "O jogo terminou empatado!";
         }
     };
+
+    return(
+        <div className = "divPrincipal">
+            <h1>Jogo de Dados</h1>
+            <h2>Rodada {rodada}/5</h2>
+
+        </div>
+    )
+
 }
