@@ -82,6 +82,50 @@ export default function JogoDados(){
             <h1>Jogo de Dados</h1>
             <h2>Rodada {rodada}/5</h2>
 
+            <div className="grid grid-cols-2 gap-8 mb-8">
+                <div className={`p-4 rounded-lg ${turnoJogador1 ? 'bg-blue-50 border-2 border-blue-400' : 'bg-gray-50'}`}>
+                    <p className="font-bold mb-2">Jogador 1 ({vitoriasJogador1} vitórias)</p>
+                    <div className="flex justify-center gap-2">
+                        <Dado valor={dadosJogador1[0]} />
+                        <Dado valor={dadosJogador1[1]} />
+                    </div>
+                    <button 
+                        disabled={!turnoJogador1 || gameOver}
+                        onClick={jogarJogador1}
+                        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
+                    >
+                        Jogar Dados
+                    </button>
+                </div>
+
+                <div className={`p-4 rounded-lg ${!turnoJogador1 && !gameOver ? 'bg-red-50 border-2 border-red-400' : 'bg-gray-50'}`}>
+                    <p className="font-bold mb-2">Jogador 2 ({vitoriasJogador2} vitórias)</p>
+                    <div className="flex justify-center gap-2">
+                        <Dado valor={dadosJogador2[0]} />
+                        <Dado valor={dadosJogador2[1]} />
+                    </div>
+                    <button 
+                        disabled={turnoJogador1 || gameOver}
+                        onClick={jogarJogador2}
+                        className="mt-4 bg-red-500 text-white px-4 py-2 rounded disabled:bg-gray-300"
+                    >
+                        Jogar Dados
+                    </button>
+                </div>
+            </div>
+
+            <div className="my-6 p-4 bg-yellow-100 rounded-lg font-medium italic min-h-[60px]">
+                {resultadoRodada}
+            </div>
+
+            {gameOver && (
+                <div className="mt-8 p-6 bg-gray-900 text-white rounded-lg">
+                    <h3 className="text-2xl font-bold mb-4">{getVencedorFinal()}</h3>
+                    <button onClick={reiniciar} className="bg-green-500 text-white py-2 px-6 rounded-full font-bold">
+                        Jogar Novamente
+                    </button>
+                </div>
+            )}
         </div>
     )
 }
